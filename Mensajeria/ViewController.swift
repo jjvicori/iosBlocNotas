@@ -60,6 +60,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell!
     }
     
+    @IBAction func guardar(_ sender: Any) { self.ref.child("nota\(num+1)").setValue("\(num+1): " + texto.text!)
+        texto.text=""
+    }
+    @IBAction func escribir(textView: UITextField) {
+        if textView.textColor == UIColor.lightGray{
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
 }
 
 
